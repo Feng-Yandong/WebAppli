@@ -9,7 +9,7 @@ namespace WebAppli.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DefaultController : ControllerBase
+    public class ApiDefaultController : ControllerBase
     {
         
     }
