@@ -11,6 +11,6 @@ namespace WebAppli.Controllers
     [ApiController]
     public class DefaultController : ControllerBase
     {
-        public int ss { get; set; }
+        
     }
 }
