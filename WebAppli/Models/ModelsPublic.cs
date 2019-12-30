@@ -46,10 +46,14 @@ namespace WebAppli.Models
         /// </summary>
         public int         Oid		     { get; set; }// 订单主键
         public string      Orders	     { get; set; }//订单号
-        public int         Ofid		     { get; set; }//商品外键
-        public int         Owid		     { get; set; }//用户外键
         public DateTime    Otime	     { get; set; }//订单时间
         public int         Oshou	     { get; set; }//收货与未收货
+
+        //
+        public int         Aid	         { get; set; }// 主键
+        public int         Aoid	         { get; set; }// 订单外键
+        public int         Agid	         { get; set; }// 商品外键
+        public int         Aowid         { get; set; }// 用户外键
 
         /// <summary>
         /// 购物表
