@@ -20,6 +20,5 @@ namespace WebAppli.Controllers
         { 
             this.db = db; 
         }
-      
     }
 }
