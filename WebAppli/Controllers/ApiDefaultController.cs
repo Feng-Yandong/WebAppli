@@ -44,6 +44,19 @@ namespace WebAppli.Controllers
             return linq.ToList();
         }
 
+        /// <summary>
+        /// 显示鲜花
+        /// </summary>
+        /// <returns></returns>
+        public List<Goods> Selhuja()
+        {
+            var linq = from s in db.Goods
+                       where s.Gtai == 0
+                       select s;
+            return linq.ToList();
+        }
+
+
 
     }
 }
