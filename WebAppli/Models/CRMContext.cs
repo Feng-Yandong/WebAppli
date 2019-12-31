@@ -44,6 +44,7 @@ namespace WebAppli.Models
         public DbSet<Orderform> Orderform { get; set; }
         public DbSet<Shopping> Shopping { get; set; }
         public DbSet<TypeGoods> TypeGoods { get; set; }
+        public DbSet<Location> Location { get; set; }
 
 
     }
