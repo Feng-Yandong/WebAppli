@@ -19,5 +19,31 @@ namespace WebAppli.Controllers
             this.db = db; 
         }
 
+
+        /// <summary>
+        /// 添加鲜花
+        /// </summary>
+        /// <param name="goods"></param>
+        /// <returns></returns>
+        public int Addhua(Goods goods)
+        {
+              db.Goods.Add(goods);
+              return db.SaveChanges();
+        }
+
+
+        /// <summary>
+        /// 显示鲜花
+        /// </summary>
+        /// <returns></returns>
+        public List<Goods> Selhua()
+        {
+            var linq = from s in db.Goods
+                       where s.Gtai == 0
+                       select s;
+            return linq.ToList();
+        }
+
+
     }
 }
