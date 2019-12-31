@@ -20,13 +20,6 @@ namespace WebAppli.Controllers
         { 
             this.db = db; 
         }
-        [HttpPost]
-        public async Task<ActionResult<int>> AddEMp(Addupto em)
-        {
-
-            db.Addupto.Add(em);
-            return await db.SaveChangesAsync();
-
-        }
+      
     }
 }
