@@ -7,5 +7,9 @@ namespace WebAppli.Models
 {
     public class Ha
     {
+        public  void aa()
+        {
+           
+        }
     }
 }
