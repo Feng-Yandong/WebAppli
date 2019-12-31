@@ -15,7 +15,7 @@ namespace WebAppli.Controllers
     {
         public CRMContext db;
         public ApiDefaultController(CRMContext db) 
-        { 
+        {
             this.db = db; 
         }
 
