@@ -8,6 +8,9 @@ namespace WebAppli.Models
 {
     public class Addupto
     {
+        /// <summary>
+        /// 一个对多个订单详情表
+        /// </summary>
         [Key]
         public int     Aid     { get; set; }        // 主键
         public string  Aoid    { get; set; }        // 订单外键
