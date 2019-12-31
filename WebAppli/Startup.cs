@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebAppli.Models;
 
 namespace WebAppli
 {
@@ -24,6 +25,30 @@ namespace WebAppli
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //实例化上下文类
+            CRMContext db = new CRMContext();
+
+            //将上下文类 装载到服务中
+            services.AddSingleton<CRMContext>(db);
+
+            /*
+             * 配置跨域处理
+             */
+            // 获取appsettings.json配置信息
+
+
+            //配置跨域处理
+            services.AddCors(options =>
+            {
+                options.AddPolicy("cors", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4435") //允许指定域名访问
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();//指定处理cookie
+                });
+            });
+
             services.AddControllers();
         }
 
@@ -36,9 +61,9 @@ namespace WebAppli
             }
 
             app.UseRouting();
-
+            app.UseCors("cors");
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
