@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DAL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebAppli.Models;
 
 namespace WebAppli.Controllers
 {
