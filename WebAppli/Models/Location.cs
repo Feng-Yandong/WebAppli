@@ -7,6 +7,9 @@ namespace WebAppli.Models
 {
     public class Location
     {
+        /// <summary>
+        /// 收货表
+        /// </summary>
         public int      Lid      { get; set; }     //收货主键
         public string   Lname    { get; set; }     //收货姓名
         public string   Lphone   { get; set; }     //收货人电话

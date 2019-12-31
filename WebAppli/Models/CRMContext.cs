@@ -12,8 +12,6 @@ namespace WebAppli.Models
     //update-database 1.0  //更新数据库操作 init为版本名称
     public class CRMContext:DbContext
     {
-
-
         public CRMContext() { }
         public CRMContext(DbContextOptions<CRMContext> options):base(options) { }
 
@@ -40,12 +38,13 @@ namespace WebAppli.Models
         {
         }
 
-        public DbSet<Addupto> addupto { get; set; }
+        public DbSet<Addupto> Addupto { get; set; }
         public DbSet<Goods> Goods { get; set; }
         public DbSet<Merchant> Merchant { get; set; }
         public DbSet<Orderform> Orderform { get; set; }
         public DbSet<Shopping> Shopping { get; set; }
         public DbSet<TypeGoods> TypeGoods { get; set; }
+        public DbSet<Location> Location { get; set; }
 
 
     }

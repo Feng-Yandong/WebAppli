@@ -12,8 +12,8 @@ namespace WebAppli.Models
         /// 商品类别表
         /// </summary>
         [Key]
-        public int    Tid      { get; set; }//商品主键
-        public string Tname    { get; set; }//类别名称
-        public string Tstring  { get; set; }//类别详情
+        public int    Tid      { get; set; }     //商品主键
+        public string Tname    { get; set; }     //类别名称
+        public string Tstring  { get; set; }     //类别详情
     }
 }
