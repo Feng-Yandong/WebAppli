@@ -23,7 +23,7 @@ namespace WebAppli.Controllers
         }
 
   
-        /// 添加鲜花
+        /// 添加鲜花/////
      
         public int Addhua(Goods goods)
         {
