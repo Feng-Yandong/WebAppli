@@ -12,10 +12,10 @@ namespace WebAppli.Models
         /// 一个对多个订单详情表
         /// </summary>
         [Key]
-        public int     Aid     { get; set; }        // 主键
-        public string  Aoid    { get; set; }        // 订单外键
-        public int     Agid    { get; set; }        // 商品外键
-        public int     AsumN   { get; set; }        // 商品数量
+        public int      Aid     { get; set; }        // 主键
+        public string   Aoid    { get; set; }        // 订单外键
+        public int?     Agid    { get; set; }        // 商品外键
+        public int?     AsumN   { get; set; }        // 商品数量
 
 
     }

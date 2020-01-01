@@ -26,18 +26,18 @@ namespace WebAppli.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Agid")
+                    b.Property<int?>("Agid")
                         .HasColumnType("int");
 
                     b.Property<string>("Aoid")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("AsumN")
+                    b.Property<int?>("AsumN")
                         .HasColumnType("int");
 
                     b.HasKey("Aid");
 
-                    b.ToTable("addupto");
+                    b.ToTable("Addupto");
                 });
 
             modelBuilder.Entity("WebAppli.Models.Goods", b =>
@@ -53,33 +53,54 @@ namespace WebAppli.Migrations
                     b.Property<string>("Gimg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Gint")
+                    b.Property<int?>("Gint")
                         .HasColumnType("int");
 
-                    b.Property<int>("Ginventory")
+                    b.Property<int?>("Ginventory")
                         .HasColumnType("int");
 
                     b.Property<string>("Gname")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Gprice")
+                    b.Property<int?>("Gprice")
                         .HasColumnType("int");
 
                     b.Property<string>("Gstring")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Gsum")
+                    b.Property<int?>("Gsum")
                         .HasColumnType("int");
 
-                    b.Property<int>("Gtai")
+                    b.Property<int?>("Gtai")
                         .HasColumnType("int");
 
-                    b.Property<int>("Gtype")
+                    b.Property<int?>("Gtype")
                         .HasColumnType("int");
 
                     b.HasKey("Gid");
 
                     b.ToTable("Goods");
+                });
+
+            modelBuilder.Entity("WebAppli.Models.Location", b =>
+                {
+                    b.Property<int>("Lid")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Lname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lonation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lphone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Lid");
+
+                    b.ToTable("Location");
                 });
 
             modelBuilder.Entity("WebAppli.Models.Merchant", b =>
@@ -88,9 +109,6 @@ namespace WebAppli.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Mid1")
-                        .HasColumnType("int");
 
                     b.Property<string>("Mimg")
                         .HasColumnType("nvarchar(max)");
@@ -110,9 +128,6 @@ namespace WebAppli.Migrations
                     b.Property<string>("Mweixin")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("wxd")
-                        .HasColumnType("int");
-
                     b.HasKey("Mid");
 
                     b.ToTable("Merchant");
@@ -125,16 +140,16 @@ namespace WebAppli.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Alid")
+                    b.Property<int?>("Alid")
                         .HasColumnType("int");
 
-                    b.Property<int>("Aowid")
+                    b.Property<int?>("Aowid")
                         .HasColumnType("int");
 
                     b.Property<string>("Orders")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Oshou")
+                    b.Property<int?>("Oshou")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Otime")
@@ -152,10 +167,10 @@ namespace WebAppli.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Sgid")
+                    b.Property<int?>("Sgid")
                         .HasColumnType("int");
 
-                    b.Property<int>("Shu")
+                    b.Property<int?>("Shu")
                         .HasColumnType("int");
 
                     b.HasKey("Sid");

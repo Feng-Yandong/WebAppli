@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace WebAppli.Models
 {
-    //Add-Migration   1.0  //其中Init是你的版本名称
-    //update-database 1.0  //更新数据库操作 init为版本名称
+    //Add-Migration   2.0  //其中Init是你的版本名称
+    //update-database 2.0  //更新数据库操作 init为版本名称
     public class CRMContext:DbContext
     {
         public CRMContext() { }
@@ -38,13 +38,13 @@ namespace WebAppli.Models
         {
         }
 
-        public DbSet<Addupto> Addupto { get; set; }
-        public DbSet<Goods> Goods { get; set; }
-        public DbSet<Merchant> Merchant { get; set; }
-        public DbSet<Orderform> Orderform { get; set; }
-        public DbSet<Shopping> Shopping { get; set; }
-        public DbSet<TypeGoods> TypeGoods { get; set; }
-        public DbSet<Location> Location { get; set; }
+        public DbSet<Addupto>   Addupto    { get; set; }
+        public DbSet<Goods>     Goods      { get; set; }
+        public DbSet<Merchant>  Merchant   { get; set; }
+        public DbSet<Orderform> Orderform  { get; set; }
+        public DbSet<Shopping>  Shopping   { get; set; }
+        public DbSet<TypeGoods> TypeGoods  { get; set; }
+        public DbSet<Location>  Location   { get; set; }
 
 
     }

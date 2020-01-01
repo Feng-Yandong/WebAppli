@@ -3,23 +3,23 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebAppli.Migrations
 {
-    public partial class _10 : Migration
+    public partial class _20 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "addupto",
+                name: "Addupto",
                 columns: table => new
                 {
                     Aid = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Aoid = table.Column<string>(nullable: true),
-                    Agid = table.Column<int>(nullable: false),
-                    AsumN = table.Column<int>(nullable: false)
+                    Agid = table.Column<int>(nullable: true),
+                    AsumN = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_addupto", x => x.Aid);
+                    table.PrimaryKey("PK_Addupto", x => x.Aid);
                 });
 
             migrationBuilder.CreateTable(
@@ -31,12 +31,12 @@ namespace WebAppli.Migrations
                     Gname = table.Column<string>(nullable: true),
                     Gimg = table.Column<string>(nullable: true),
                     Gdescribe = table.Column<string>(nullable: true),
-                    Gprice = table.Column<int>(nullable: false),
-                    Gsum = table.Column<int>(nullable: false),
-                    Gtai = table.Column<int>(nullable: false),
-                    Ginventory = table.Column<int>(nullable: false),
-                    Gtype = table.Column<int>(nullable: false),
-                    Gint = table.Column<int>(nullable: false),
+                    Gprice = table.Column<int>(nullable: true),
+                    Gsum = table.Column<int>(nullable: true),
+                    Gtai = table.Column<int>(nullable: true),
+                    Ginventory = table.Column<int>(nullable: true),
+                    Gtype = table.Column<int>(nullable: true),
+                    Gint = table.Column<int>(nullable: true),
                     Gstring = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -45,13 +45,26 @@ namespace WebAppli.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Location",
+                columns: table => new
+                {
+                    Lid = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Lname = table.Column<string>(nullable: true),
+                    Lphone = table.Column<string>(nullable: true),
+                    Lonation = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Location", x => x.Lid);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Merchant",
                 columns: table => new
                 {
                     Mid = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Mid1 = table.Column<int>(nullable: false),
-                    wxd = table.Column<int>(nullable: false),
                     Mname = table.Column<string>(nullable: true),
                     Mweixin = table.Column<string>(nullable: true),
                     Mphone = table.Column<string>(nullable: true),
@@ -72,9 +85,9 @@ namespace WebAppli.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Orders = table.Column<string>(nullable: true),
                     Otime = table.Column<DateTime>(nullable: false),
-                    Oshou = table.Column<int>(nullable: false),
-                    Aowid = table.Column<int>(nullable: false),
-                    Alid = table.Column<int>(nullable: false)
+                    Oshou = table.Column<int>(nullable: true),
+                    Aowid = table.Column<int>(nullable: true),
+                    Alid = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -87,8 +100,8 @@ namespace WebAppli.Migrations
                 {
                     Sid = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Sgid = table.Column<int>(nullable: false),
-                    Shu = table.Column<int>(nullable: false)
+                    Sgid = table.Column<int>(nullable: true),
+                    Shu = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -113,10 +126,13 @@ namespace WebAppli.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "addupto");
+                name: "Addupto");
 
             migrationBuilder.DropTable(
                 name: "Goods");
+
+            migrationBuilder.DropTable(
+                name: "Location");
 
             migrationBuilder.DropTable(
                 name: "Merchant");
